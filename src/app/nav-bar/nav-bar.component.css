@@ -1,0 +1,23 @@
+.show .navbar-brand{
+  display: none;
+}
+
+.collapsing .navbar-brand{
+  display: none;
+}
+
+.show .flex-grow-1{
+  justify-content: flex-start !important;
+}
+
+.collapsing .flex-grow-1{
+  justify-content: flex-start !important;
+}
+
+.show .btn{
+  Margin-top: 1rem;
+}
+
+.collapsing .btn{
+  Margin-top: 1rem;
+}
