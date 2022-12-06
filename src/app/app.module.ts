@@ -7,7 +7,6 @@ import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { EducacionComponent } from './educacion/educacion.component';
 import { SkillsComponent } from './skills/skills.component';
-import { CircleProgressBarComponent } from './circle-progress-bar/circle-progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import { CircleProgressBarComponent } from './circle-progress-bar/circle-progres
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
-    CircleProgressBarComponent
   ],
   imports: [
     BrowserModule
