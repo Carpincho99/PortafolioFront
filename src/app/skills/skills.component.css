@@ -10,7 +10,7 @@
 }
 
 div[role="Circleprogressbar"] {
-  --size: 12rem;
+  --size: 10rem;
   --fg: #369;
   --bg: #def;
   --pgPercentage: var(--value);

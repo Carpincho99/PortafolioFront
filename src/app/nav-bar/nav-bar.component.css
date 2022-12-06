@@ -21,3 +21,7 @@
 .collapsing .btn{
   Margin-top: 1rem;
 }
+
+.active{
+font-weight: 800;
+}
