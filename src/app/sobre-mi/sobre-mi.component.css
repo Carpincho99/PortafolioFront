@@ -1,0 +1,12 @@
+.bg-image{
+  Margin: 0;
+  Padding: 0;
+  background-image: url('../../assets/banner.jpg');
+  background-size: cover;
+  opacity: 0.95;
+}
+
+.img-perfil{
+  width: 60%;
+}
+
