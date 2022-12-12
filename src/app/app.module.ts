@@ -8,6 +8,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { EducacionComponent } from './educacion/educacion.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { LoginComponent } from './login/login.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
