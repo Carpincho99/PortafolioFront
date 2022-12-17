@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

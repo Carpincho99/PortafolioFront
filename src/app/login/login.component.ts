@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { LoginUser } from '../models/login-user';
 import { TokenService } from '../service/token.service';
 import { AuthService } from '../service/auth.service';
+
+declare var $ : any;
+declare var jQuery: any;
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit{
 
   isLogged = false;
@@ -17,6 +21,7 @@ export class LoginComponent implements OnInit{
   password! : string;
   roles: string[] = [];
   errMsj!: string;
+  @Output() loginSuccess = new EventEmitter<void>();
 
   constructor(private tokenService: TokenService, private authService: AuthService) { }
 
@@ -37,6 +42,8 @@ export class LoginComponent implements OnInit{
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
+        $('#loginModal').modal('hide'); 
+        this.loginSuccess.emit();
       }, err =>{
         this.isLogged = false;
         this.isLogginFail = true;

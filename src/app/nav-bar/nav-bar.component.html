@@ -35,8 +35,11 @@
         </a>
       </div>
     <div>
-      <button class="btn btn-outline-light me-2" type="button"  data-bs-toggle="modal" data-bs-target="#loginModal">Log In</button>
+      <button *ngIf="!isLogged" class="btn btn-outline-light me-2" type="button"  data-bs-toggle="modal" data-bs-target="#loginModal">Log In</button>
+      <button *ngIf="isLogged" class="btn btn-outline-light me-2" type="button"  (click)="LogOut()">Log Out</button>
     </div>
     </div> <!-- navbar-collapse -->
   </div>
 </nav>
+
+<app-login (loginSuccess)="ngOnInit()"></app-login>
