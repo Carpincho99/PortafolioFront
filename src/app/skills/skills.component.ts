@@ -10,8 +10,8 @@ import { TokenService } from '../service/token.service';
 })
 export class SkillsComponent implements OnInit{
   skillList: Skill[] = [];
-
   isLogged: boolean = false;
+
   constructor(private tokenService: TokenService, private skillService: SkillService){}
 
   ngOnInit(): void {

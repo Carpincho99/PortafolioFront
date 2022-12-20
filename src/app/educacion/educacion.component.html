@@ -1,41 +1,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="row">
-      <h3 id="scrollspyHeading3">Educación</h3>
+      <div  class="d-flex align-items-center">
+        <h3 id="scrollspyHeading3" class="me-3">Educación</h3>
+        <div *ngIf="isLogged" class="">
+          <button class="btn btn-outline-dark btn-success text-white btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#newEducModal">
+            <i class="bi bi-plus-square-fill"></i>
+          </button>
+        </div>
+      </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <h5>Estudiante de Ing. Electrónica (2021 - actualidad)</h5>  
-          <h6>Universidad Tecnologica Nacional, Facultad Regional de Córdoba</h6>
-          <p>
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h5>Argentina Programa - #SeProgramar (2022) </h5>  
-          <p>
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h5>Argentina Programa - #YoProgramo (2022) </h5>  
-          <p>
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h5>JavaScript for QA Engineers and SDETs (2021)</h5>  
-          <h6>Udemy</h6>
-          <p>
-          </p>
-        </li>
-        <li class="list-group-item">
-          <h5>Git: Become an Expert in Git & Github (2021)</h5>  
-          <h6>Udemy</h6>
-          <p>
-          </p>
-        </li>
-       <li class="list-group-item">
-          <h5>Intermediate Python Programming Course (2020)</h5>  
-          <h6>freeCodeCamp</h6>
-          <p>
-          </p>
+        <li *ngFor="let educ of educList" class="list-group-item">
+          <h5>{{educ.name}}</h5>  
+          <h6>{{educ.lugar}}</h6>
         </li>
       </ul>
     </div>
