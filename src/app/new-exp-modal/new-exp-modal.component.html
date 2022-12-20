@@ -1,0 +1,32 @@
+<!-- Modal -->
+<div class="modal fade" id="newExpModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">Nueva experiencia laboral</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+      <div class="mb-3">
+        <label for="nane" class="form-label">Nombre de la empresa</label>
+        <input for="name" type="email" [(ngModel)]="name"  name="name" required class="form-control" id="name" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="puesto" class="form-label">Puesto</label>
+        <input for="puesto"  [(ngModel)]="puesto" name="puesto" required type="text" class="form-control" id="puesto">
+        <div id="passwordHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="descrip" class="form-label">Descripción</label>
+        <textarea class="form-control" [(ngModel)]="descrip" name="descrip" for="descrip" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div id="passwordHelp" class="form-text"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>

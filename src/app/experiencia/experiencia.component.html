@@ -3,43 +3,34 @@
     <div  class="d-flex align-items-center">
       <h3 id="scrollspyHeading2" class="me-3">Experiencia laboral</h3>
       <div *ngIf="isLogged">
-        <button class="btn btn-outline-dark btn-success text-white btn-sm mb-2">
+        <button class="btn btn-outline-dark btn-success text-white btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#newExpModal">
           <i class="bi bi-plus-square-fill"></i>
         </button>
       </div>
     </div>
-    <ul class="list-group list-group-flush bg">
-      <li class="list-group-item">
-        <div class="d-flex justify-content-between align-items-start">
-          <h5>Trabajo 1</h5>  
-          <div *ngIf="isLogged">
-            <button class="btn btn-outline-dark btn-warning text-white me-2 btn-sm">
-              <i class="bi bi-pencil-fill"></i>
-            </button>
-            <button class="btn btn-outline-dark btn-danger text-white me-2 btn-sm">
-              <i class="bi bi-trash3-fill fa-sm"></i>
-            </button>
+
+      <ul class="list-group list-group-flush bg">
+        <li class="list-group-item" *ngFor="let experiencia of expList">
+          <div class="d-flex justify-content-between align-items-start">
+            <h5>{{experiencia.name}}</h5>  
+            <div *ngIf="isLogged">
+              <button class="btn btn-outline-dark btn-warning text-white me-2 btn-sm" (click)="isEditing=true">
+                <i *ngIf="!isEditing" class="bi bi-pencil-fill"></i>
+                <i *ngIf="isEditing" class="bi bi-check-square-fill"></i>
+              </button>
+              <button class="btn btn-outline-dark btn-danger text-white me-2 btn-sm" (click)="delete(experiencia.id)">
+                <i class="bi bi-trash3-fill fa-sm"></i>
+              </button>
+            </div>
           </div>
-        </div>
-        <h6>Puesto</h6>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-        </p>
-      </li>
-      <li class="list-group-item">
-        <h5>Trabajo 2</h5>  
-        <h6>Puesto</h6>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-        </p>
-      </li>
-      <li class="list-group-item">
-        <h5>Trabajo 3</h5>  
-        <h6>Puesto</h6>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-        </p>
-      </li>
-    </ul>
+          <h6>{{experiencia.puesto}}</h6>
+          <p>
+            {{experiencia.descrip}}
+          </p>
+        </li>
+      </ul>
+
   </div>
 </div>
+
+<app-new-exp-modal (emiter)="loadExpList()"></app-new-exp-modal>

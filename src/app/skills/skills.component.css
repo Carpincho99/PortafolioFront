@@ -33,3 +33,11 @@ div[role="Circleprogressbar"] {
 /*   counter-reset: percentage var(--value); */
 /*   content: counter(percentage) '%'; */
 /* } */
+
+i{
+  font-size: 6rem;
+}
+
+.bi{ 
+  font-size: 0.8rem;
+}
