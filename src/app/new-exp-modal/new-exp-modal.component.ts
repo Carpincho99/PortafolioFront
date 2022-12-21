@@ -25,8 +25,11 @@ export class NewExpModalComponent {
     this.expServ.save(this.newExp).subscribe(data => {
     this.emiter.emit();
     $('#newExpModal').modal('hide');
+    $('#newEducModal').on('hidden.bs.modal', function () {
+      $('#newEducModal').find('form').trigger('reset');
+    })
     }, err =>{
-        alert("ERROR");
+      alert(err.error.mensaje);
     });
   }
 

@@ -1,0 +1,33 @@
+<!-- Modal -->
+<div class="modal fade" id="newSkillModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">Nueva skill</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+      <div class="mb-3">
+        <label for="nane" class="form-label">Icon</label>
+        <div class="input-group">
+        <span class="input-group-text">devicon-</span>
+        <input for="name" type="email" [(ngModel)]="icon"  name="name" required class="form-control" id="name" aria-describedby="emailHelp">
+        </div>
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="puesto" class="form-label">Porcentaje</label>
+    <div  class="d-flex justify-content-between">
+        <input [(ngModel)]="porcentaje" (change)="onChange($event)" type="range" class="form-range me-3" min="0" max="100" id="customRange2">
+        <label >{{porcentaje}}%</label>
+        </div>
+        <div id="passwordHelp" class="form-text"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>

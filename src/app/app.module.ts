@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NewExpModalComponent } from './new-exp-modal/new-exp-modal.component';
+import { NewEducModalComponent } from './new-educ-modal/new-educ-modal.component';
+import { NewSkillModalComponent } from './new-skill-modal/new-skill-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { NewExpModalComponent } from './new-exp-modal/new-exp-modal.component';
     ProyectosComponent,
     LoginComponent,
     NewExpModalComponent,
+    NewEducModalComponent,
+    NewSkillModalComponent,
   ],
   imports: [
     BrowserModule,

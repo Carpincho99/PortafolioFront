@@ -15,6 +15,7 @@ export class ExperienciaComponent implements OnInit{
   expList: Exp[] = [];
 
   exp!: Exp;
+  modExpId: number = 0;
   modExpName: string = "";
   modExpPuesto: string = "";
   modExpDescrip: string = "";
@@ -30,11 +31,23 @@ export class ExperienciaComponent implements OnInit{
     this.expServ.list().subscribe(data => this.expList = data);
   }
 
-  modExp(id?: number): void{
+  editing(name:string, puesto:string, descrip:string, id?:number): void{
     if(id){
+      this.isEditing=true;
+      this.modExpId = id;
+      this.modExpName = name;
+      this.modExpPuesto = puesto;
+      this.modExpDescrip = descrip;
+    }
+  }
+
+  modExp(): void{
+    if(this.modExpId){
       this.exp = new Exp(this.modExpName, this.modExpDescrip, this.modExpPuesto);
-      this.expServ.mod(id, this.exp).subscribe(data => {
-        this.isEditing = false;
+      this.expServ.mod(this.modExpId, this.exp).subscribe(data => {
+      this.modExpId = 0;
+      this.ngOnInit()
+      this.isEditing = false;
       }, err =>{
 
         })

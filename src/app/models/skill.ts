@@ -3,7 +3,7 @@ export class Skill {
   porcentaje: number;
   icon: string;
 
-  constructor(porcentaje: number, icon: string){
+  constructor(icon: string, porcentaje: number, ){
     this.porcentaje = porcentaje;
     this.icon = icon;
   }
