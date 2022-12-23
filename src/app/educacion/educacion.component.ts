@@ -24,7 +24,7 @@ export class EducacionComponent implements OnInit{
     this.educServ.list().subscribe(
       data => {
         this.educList = data;
-      this.fetchError = false;
+        this.fetchError = false;
       }, err => {
       this.fetchError = true;
     });
