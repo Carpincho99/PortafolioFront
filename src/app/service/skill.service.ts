@@ -7,7 +7,7 @@ import { Skill } from '../models/skill';
   providedIn: 'root'
 })
 export class SkillService {
-  url = "http://localhost:8080/skill"
+  url = "https://portfoliobackendspring-production.up.railway.app/skill"
 
   constructor(private http: HttpClient) { }
 

@@ -11,6 +11,7 @@ import { TokenService } from '../service/token.service';
 export class ExperienciaComponent implements OnInit{
   isLogged: boolean = false;
   isEditing: boolean = false;
+  fetchError: boolean = false;
 
   expList: Exp[] = [];
 
@@ -28,8 +29,13 @@ export class ExperienciaComponent implements OnInit{
   }
 
   loadExpList(): void{
-    this.expServ.list().subscribe(data => this.expList = data);
-  }
+    this.expServ.list().subscribe(data => {
+      this.expList = data;  
+      this.fetchError = false;
+    }, err => {
+      this.fetchError = true;
+  });
+}
 
   editing(name:string, puesto:string, descrip:string, id?:number): void{
     if(id){

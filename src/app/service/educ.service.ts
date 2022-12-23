@@ -7,7 +7,7 @@ import { Educ } from '../models/educ';
   providedIn: 'root'
 })
 export class EducService {
-  url = "http://localhost:8080/educ"
+  url = "https://portfoliobackendspring-production.up.railway.app/educ"
 
   constructor(private http: HttpClient) { }
 

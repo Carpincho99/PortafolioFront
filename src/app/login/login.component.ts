@@ -3,6 +3,9 @@ import { LoginUser } from '../models/login-user';
 import { TokenService } from '../service/token.service';
 import { AuthService } from '../service/auth.service';
 
+declare var jQuery:any;
+declare var $: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -43,7 +46,12 @@ export class LoginComponent implements OnInit{
         this.isLogged = false;
         this.isLogginFail = true;
         this.errMsj = err.error.mensaje;
-        console.log(this.errMsj);
+        alert("Error al iniciar seción");
+        $('#loginModal').modal('hide');
+        $('#loginModal').on('hidden.bs.modal', function () {
+          $('#loginModal').find('form').trigger('reset');
+        })
+
       })
   }
 }

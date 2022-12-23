@@ -10,6 +10,7 @@ import { Educ } from '../models/educ';
 })
 export class EducacionComponent implements OnInit{
   isLogged: boolean = false;
+  fetchError: boolean = false;
   educList: Educ[] = [];
 
   constructor(private tokenService: TokenService, private educServ: EducService){}
@@ -20,7 +21,13 @@ export class EducacionComponent implements OnInit{
   }
 
   loadList(): void{
-    this.educServ.list().subscribe(data => this.educList = data);
+    this.educServ.list().subscribe(
+      data => {
+        this.educList = data;
+      this.fetchError = false;
+      }, err => {
+      this.fetchError = true;
+    });
   }
 
   delete(id?: number): void{

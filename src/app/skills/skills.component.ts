@@ -11,6 +11,7 @@ import { TokenService } from '../service/token.service';
 export class SkillsComponent implements OnInit{
   skillList: Skill[] = [];
   isLogged: boolean = false;
+  fetchError: boolean = false;
 
   constructor(private tokenService: TokenService, private skillService: SkillService){}
 
@@ -20,7 +21,13 @@ export class SkillsComponent implements OnInit{
   }
 
   loadList(): void{
-    this.skillService.list().subscribe(data => this.skillList = data);
+    this.skillService.list().subscribe(
+      data => {
+        this.skillList = data;
+        this.fetchError = false;
+      }, err=>{
+        this.fetchError = true;
+      });
   }
 
  delete(id?: number): void{
