@@ -7,7 +7,7 @@ import { Exp } from '../models/exp';
   providedIn: 'root'
 })
 export class ExpService {
-  url = "http://localhost:8080/exp"
+  url = "https://portfolioargprograma-carpincho99.koyeb.app/exp"
 
   constructor(private http: HttpClient) { }
 
