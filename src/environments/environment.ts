@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiUrl: 'https://portfolioargprograma-carpincho99.koyeb.app'
-}
+  production: false,
+  URL: 'http://localhost:8080/'
+};
