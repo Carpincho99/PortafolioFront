@@ -2,25 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Skill } from '../models/skill';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillService {
-  url = "https://portfoliobackendspring-production.up.railway.app/skill"
 
   constructor(private http: HttpClient) { }
 
   public list(): Observable<Skill[]>{
-   return this.http.get<Skill[]>(this.url + "/list");
+   return this.http.get<Skill[]>(environment.apiUrl + "/list");
   }
 
   public save(exp: Skill): Observable<any>{
-    return this.http.post<any>(this.url + "/create", exp);
+    return this.http.post<any>(environment.apiUrl + "/create", exp);
   }
 
   public delete(id: number): Observable<any>{
-    return this.http.delete<any>(this.url + `/delete/${id}`);
+    return this.http.delete<any>(environment.apiUrl + `/delete/${id}`);
   }
 
 

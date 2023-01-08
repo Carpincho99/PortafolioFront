@@ -24,9 +24,9 @@ export class NewExpModalComponent {
     this.newExp = new Exp(this.name, this.descrip, this.puesto);
     this.expServ.save(this.newExp).subscribe(data => {
     this.emiter.emit();
-    $('#newEducModal').modal('hide');
-    $('#newEducModal').on('hidden.bs.modal', function () {
-      $('#newEducModal').find('form').trigger('reset');
+    $('#newExpModal').modal('hide');
+    $('#newExpModal').on('hidden.bs.modal', function () {
+      $('#newExpModal').find('form').trigger('reset');
     })
     }, err =>{
       alert(err.error.mensaje);
