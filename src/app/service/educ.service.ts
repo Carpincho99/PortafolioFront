@@ -12,19 +12,19 @@ export class EducService {
   constructor(private http: HttpClient) { }
 
   public list(): Observable<Educ[]>{
-   return this.http.get<Educ[]>(environment.apiUrl + "/list");
+   return this.http.get<Educ[]>(environment.apiUrl + "educ/list");
   }
 
   public save(educ: Educ): Observable<any>{
-    return this.http.post<any>(environment.apiUrl + "/create", educ);
+    return this.http.post<any>(environment.apiUrl + "educ/create", educ);
   }
 
   public mod(id: number, educ: Educ): Observable<any>{
-    return this.http.put<any>(environment.apiUrl + `/mod/${id}`, educ);
+    return this.http.put<any>(environment.apiUrl + `educ/mod/${id}`, educ);
   }
 
   public delete(id: number): Observable<any>{
-    return this.http.delete<any>(environment.apiUrl + `/delete/${id}`);
+    return this.http.delete<any>(environment.apiUrl + `educ/delete/${id}`);
   }
 
 }
