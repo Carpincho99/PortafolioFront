@@ -23,6 +23,9 @@
       <div *ngIf="fetchError"  class="d-flex align-items-center">
         <p class="text-danger">Error obteniendo datos del servidor...</p>
       </div>
+      <div *ngIf="!educList.length && !fetchError"  class="d-flex align-items-center">
+        <p class="text-danger">Obteniendo datos del servidor...</p>
+      </div>
     </div>
   </div>
 </div>
