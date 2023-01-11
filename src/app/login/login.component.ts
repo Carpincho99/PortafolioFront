@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit{
         this.isLoging = false;
         this.isLogginFail = true;
         this.errMsj = err.error.mensaje;
-        alert("Error al iniciar seción");
+        alert("Error al iniciar sesión");
         $('#loginModal').modal('hide');
         $('#loginModal').on('hidden.bs.modal', function () {
           $('#loginModal').find('form').trigger('reset');
